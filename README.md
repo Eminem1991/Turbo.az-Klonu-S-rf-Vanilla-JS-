@@ -1,44 +1,19 @@
-# turbo.az
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
+Layihə: Turbo.az Klonu (Sırf Vanilla JS)
+Əsas Şərtlər:
+Vaxt məhdudiyyəti yoxdur. Əsas məqsəd tez bitirmək yox, yazılan hər sətir kodun məntiqini dərinləməsinə anlamaqdır.
+AI istifadəsi minimum olmalıdır. Kodları AI-a yazdırmaq qadağandır. Tıxandığın hissədə sintaksisə və ya sənədləşməyə (MDN) baxa bilərsən.
+Real məlumat lazım deyil (Mock Data): Arxa tərəfdə 15-20 elandan ibarət zəngin bir cars massivi (mock JSON data) istifadə edəcəksən.
+Tapşırıq Öhdəlikləri (Sırf Pure JS, HTML, CSS)
+Heç bir xarici kitabxana istifadə etmədən aşağıdakı funksionallıqları qurmalısan:
+Elanların Siyahılanması (DOM Manipulyasiyası):
+Mock məlumatları JavaScript ilə tutub HTML-də avtomobil kartları kimi dinamik göstərməlisən.
+Axtarış və Filtrləmə (Array Methods & Events):
+Marka/Model seçimi (select).
+Qiymət aralığı (Min - Maks input-lar).
+Yanacaq növü, Ban növü seçimləri.
+"Axtar" düyməsinə basdıqda və ya anlıq yazdıqca siyahı filter() metodu ilə süzülməlidir.
+Seçilmişlər / Seçilmişlərə əlavə et (Events & Storage):
+Hər kartın üstündəki "Ürək" (Fav) düyməsinə basdıqda avtomobil seçilmişlərə keçməli, təkrar basdıqda çıxmalıdır.
+Seçilmiş elanlar səhifə yenilənəndə (F5) localStorage sayəsində silinməməlidir.
+Elan Yerləşdir (Form & Validation):
+Yeni elan əlavə etmək üçün sadə bir form. Form doldurularkən daxil edilən məlumatların düzgünlüyü (məsələn: qiymət mənfi ola bilməz, telefon nömrəsi müəyyən formatda olmalıdır) JS ilə yoxlanmalıdır.
