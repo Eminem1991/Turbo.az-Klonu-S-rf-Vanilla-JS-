@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Turbo.az Klonu</title>
+
+    <link rel="stylesheet" href="./src/assets/style.css" />
+  </head>
+  <body>
+    <div class="header-bar">
+      <h1>Turbo.az</h1>
+    </div>
+    <header>
+      <footer class="footer">
+        <select id="product-model">
+          <option value="">Bütün modellər</option>
+        </select>
+        <div class="price-model">
+          <input type="number" id="min-price" placeholder="Minimum qiymət" />
+          <input type="number" id="max-price" placeholder="Maksimum qiymət" />
+        </div>
+        <div class="fuel-type">
+          <label for="fuel-type">Yanacaq növü:</label>
+          <select id="fuel-type">
+            <option value="">Bütün yanacaq növləri</option>
+            <option value="benzin">Benzin</option>
+            <option value="dizel">Dizel</option>
+            <option value="hibrid">Hibrid</option>
+            <option value="elektrik">Elektrik</option>
+          </select>
+        </div>
+        <div class="btn-find">
+          <input type="text" id="search-input" placeholder="Axtar..." />
+          <button id="find-button">Axtar</button>
+          <button type="submit" id="yeni-elan">
+            <img id="add-news" src="./src/assets/icons/plus-solid-full.svg" />
+            Yeni elan
+          </button>
+        </div>
+      </footer>
+    </header>
+    <div class="container">
+      <section id="car-list"></section>
+
+      <main>
+        <aside>
+          <div id="new-cars">
+            <div class="icon"><img src="./src/assets/icons/star-regular-full.svg" /></div>
+          </div>
+          <div class="yeni-siyahi"></div>
+        </aside>
+        <div id="add-car-modal">
+          <h3>Yeni elan elave et</h3>
+          <form id="car-form">
+            <input type="text" id="form-marka" placeholder="Marka (mes: BMW)" required />
+            <input type="text" id="form-model" placeholder="Model (məs: X5)" required />
+            <input
+              type="text"
+              id="form-telefon"
+              placeholder="Telefon (məs: 050-123-45-67)"
+              required
+            />
+            <input type="number" id="form-qiymet" placeholder="1234 AZN " required />
+            <button type="submit" id="submit-car">Elanı Yerləşdir</button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="./Cars.js"></script>
+    <script type="module" src="./src/favorite.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

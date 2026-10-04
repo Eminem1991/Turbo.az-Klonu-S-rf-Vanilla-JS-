@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ebedf3;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  padding: 0 10px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ebedf3;
+  position: relative;
+  padding: 10px 5px;
+}
+
+.header-bar h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 45px;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: red;
+  color: #fff;
+
+  padding: 15px 20px;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-top: 80px;
+  position: relative;
+}
+
+footer #yeni-elan {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white !important;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #00ff00;
+  padding: 5px 10px;
+  border-radius: 5px;
+  gap: 5px;
+  user-select: none;
+  margin: 10px;
+}
+
+#add-news {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) saturate(100%) invert(56%) sepia(89%) saturate(452%)
+    hue-rotate(65deg) brightness(102%) contrast(101%);
+}
+
+.btn-find {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px;
+}
+
+.new-cars {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.icon {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: none;
+  transition: 0.2s ease;
+}
+.icon.active {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(95%) saturate(7463%)
+    hue-rotate(358deg) brightness(98%) contrast(115%);
+  transform: scale(1.1);
+}
+
+.add-car-modal {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-car-modal input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
