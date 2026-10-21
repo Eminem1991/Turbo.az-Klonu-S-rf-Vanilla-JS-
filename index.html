@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      Turbo.az: avtomobil almaq, satmaq, təzə və işlənmiş avtomobillərin ...
+    </title>
+    <link
+      rel="icon"
+      href="./icons/T.png"
+    />
+    <link
+      rel="stylesheet"
+      href="./style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="navbar">
+          <div class="navbar__left">
+            <ul class="navbar__left__list">
+              <li>
+                <a
+                  href="https://tap.az/"
+                  target="_blank"
+                  >Tap.az</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://bina.az/"
+                  target="_blank"
+                  >Bina.az</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://boss.az/"
+                  target="_blank"
+                  >Boss.az</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="navbar__right">
+            <div class="navbar__right__info">
+              <p>
+                Dəstək:
+                <span
+                  class="supporting"
+                  id="support"
+                >
+                  (012) 526-47-47
+                </span>
+              </p>
+              <p
+                class="helping"
+                id="help"
+              >
+                Yardim
+              </p>
+              <p
+                class="language"
+                id="language"
+              >
+                RU
+              </p>
+            </div>
+            <div class="navbar__right__menu">
+              <div class="navbar__right__menu__items1">
+                <img src="./icons/message-regular-full.svg" />
+                <span
+                  class="message"
+                  id="message"
+                  >Mesajlar</span
+                >
+              </div>
+              <div class="navbar__right__menu__items2">
+                <img src="./icons/heart-solid-full.svg" />
+                <span
+                  class="selected"
+                  id="select"
+                  >Secilmis</span
+                >
+              </div>
+              <div class="navbar__right__menu__items3">
+                <img src="./icons/giris.svg" />
+                <span
+                  class="entered"
+                  id="enter"
+                  >Giris</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav class="sub-header">
+        <a class="logo">Turbo.az</a>
+        <ul class="nav_links">
+          <li>
+            <a
+              href="https://turbo.az/autos"
+              target="_blank"
+              >Elanlar</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://turbo.az/avtosalonlar"
+              target="_blank"
+              >Dilerlər</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://turbo.az/autos?q%5Bavailability_status%5D=order"
+              target="_blank"
+              >Sifarişlə</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://turbo.az/autocatalog"
+              target="_blank"
+              >Avtokataloq</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://turbo.az/motosiklet"
+              target="_blank"
+              >Moto</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://tap.az/elanlar/neqliyyat/ehtiyyat-hisseleri-ve-aksesuarlar"
+              target="_blank"
+              >Ehtiyat hissələri və aksesuarlar</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://tap.az/elanlar/xidmetler/neqliyyat-icaresi"
+              target="_blank"
+              >İcarə</a
+            >
+          </li>
+        </ul>
+
+        <a
+          class="btn__new__added"
+          id="btn__new__add"
+          type="button"
+          ><img src="./icons/circle-plus-solid-full.svg" />Yeni elan</a
+        >
+      </nav>
+    </header>
+    <main class="main-container">
+      <aside class="filter-wrapper">
+        <div class="marka-left">
+          <div class="marka">
+            <div>
+              <label for="marka">Marka</label>
+              <select
+                name="marca"
+                id="marca"
+              >
+                <option id="clear__carList">Sifirla</option>
+              </select>
+            </div>
+
+            <div class="price-min-max">
+              <input
+                id="min"
+                type="number"
+                placeholder="Qiymet, min."
+              />
+              <input
+                id="max"
+                type="number"
+                placeholder="maks."
+              />
+            </div>
+          </div>
+          <div class="model_list">
+            <input
+              type="text"
+              class="model__text"
+              id="model__text"
+              placeholder="Model"
+            />
+          </div>
+          <div class="currency__list">
+            <select id="currency">
+              <option
+                value="AZN"
+                id="azn"
+              >
+                AZN
+              </option>
+              <option
+                value="USD"
+                id="usd"
+              >
+                USD
+              </option>
+              <option
+                value="EURO"
+                id="euro"
+              >
+                EURO
+              </option>
+            </select>
+            <button
+              type="button"
+              class="credits"
+              id="credit"
+            >
+              Kredit
+            </button>
+            <button
+              type="button"
+              class="barter"
+              id="barter"
+            >
+              Barter
+            </button>
+          </div>
+        </div>
+        <div class="btn__right">
+          <div class="btn__situation">
+            <button
+              type="button"
+              id="btn__all"
+            >
+              Hamisi
+            </button>
+            <button
+              type="button"
+              id="btn__new"
+            >
+              Yeni
+            </button>
+            <button
+              type="button"
+              id="btn__driven"
+            >
+              Surulmus
+            </button>
+          </div>
+          <div
+            class="custom-dropdown"
+            id="cityDropdown"
+          >
+            <div
+              class="dropdown-select"
+              id="dropdownSelectBtn"
+            >
+              <span>Seher</span>
+              <span class="arrow">&#9662;</span>
+            </div>
+
+            <div
+              class="dropdown-list"
+              id="dropdownList"
+            >
+              <label class="dropdown-item reset-item">
+                <input
+                  type="checkbox"
+                  id="clearCity"
+                />
+                Sıfırla
+              </label>
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Ağcabədi"
+                />
+                Ağcabədi</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Ağdam"
+                />
+                Ağdam</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Ağdaş"
+                />
+                Ağdaş</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Ağstafa"
+                />
+                Ağstafa</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Ağsu"
+                />
+                Ağsu</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Astara"
+                />
+                Astara</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Babək"
+                />
+                Babək</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Bakı"
+                />
+                Bakı</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Balakən"
+                />
+                Balakən</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Beyləqan"
+                />
+                Beyləqan</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Bərdə"
+                />
+                Bərdə</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Biləsuvar"
+                />
+                Biləsuvar</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Cəbrayıl"
+                />
+                Cəbrayıl</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Cəlilabad"
+                />
+                Cəlilabad</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Culfa"
+                />
+                Culfa</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Daşkəsən"
+                />
+                Daşkəsən</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Füzuli"
+                />
+                Füzuli</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Gədəbəy"
+                />
+                Gədəbəy</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Gəncə"
+                />
+                Gəncə</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Goranboy"
+                />
+                Goranboy</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Göyçay"
+                />
+                Göyçay</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Göygöl"
+                />
+                Göygöl</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Hacıqabul"
+                />
+                Hacıqabul</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="İmişli"
+                />
+                İmişli</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="İsmayıllı"
+                />
+                İsmayıllı</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Kəlbəcər"
+                />
+                Kəlbəcər</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Kəngərli"
+                />
+                Kəngərli</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Kürdəmir"
+                />
+                Kürdəmir</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Laçın"
+                />
+                Laçın</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Lənkəran"
+                />
+                Lənkəran</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Lerik"
+                />
+                Lerik</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Masallı"
+                />
+                Masallı</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Mingəçevir"
+                />
+                Mingəçevir</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Naftalan"
+                />
+                Naftalan</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Naxçıvan"
+                />
+                Naxçıvan</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Neftçala"
+                />
+                Neftçala</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Oğuz"
+                />
+                Oğuz</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Ordubad"
+                />
+                Ordubad</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Qax"
+                />
+                Qax</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Qazax"
+                />
+                Qazax</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Qəbələ"
+                />
+                Qəbələ</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Qobustan"
+                />
+                Qobustan</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Quba"
+                />
+                Quba</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Qubadlı"
+                />
+                Qubadlı</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Qusar"
+                />
+                Qusar</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Saatlı"
+                />
+                Saatlı</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Sabirabad"
+                />
+                Sabirabad</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Sədərək"
+                />
+                Sədərək</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Salyan"
+                />
+                Salyan</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Şamaxı"
+                />
+                Şamaxı</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Şəki"
+                />
+                Şəki</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Şəmkir"
+                />
+                Şəmkir</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Şərur"
+                />
+                Şərur</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Şirvan"
+                />
+                Şirvan</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Siyəzən"
+                />
+                Siyəzən</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Sumqayıt"
+                />
+                Sumqayıt</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Şuşa"
+                />
+                Şuşa</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Tərtər"
+                />
+                Tərtər</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Tovuz"
+                />
+                Tovuz</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Ucar"
+                />
+                Ucar</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Xaçmaz"
+                />
+                Xaçmaz</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Xankəndi"
+                />
+                Xankəndi</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Xızı"
+                />
+                Xızı</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Xocalı"
+                />
+                Xocalı</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Xocavənd"
+                />
+                Xocavənd</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Yardımlı"
+                />
+                Yardımlı</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Yevlax"
+                />
+                Yevlax</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Zaqatala"
+                />
+                Zaqatala</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Zəngilan"
+                />
+                Zəngilan</label
+              >
+              <label class="dropdown-item"
+                ><input
+                  type="checkbox"
+                  value="Zərdab"
+                />
+                Zərdab</label
+              >
+            </div>
+          </div>
+          <div>
+            <select class="body__type">
+              <option>Ban novu</option>
+              <option>Sıfırla</option>
+              <option>Avtobus</option>
+              <option>Avtokran</option>
+              <option>Dartqi</option>
+              <option>Fastbok</option>
+              <option>Fayton</option>
+              <option>Hetcbek, 3qapi</option>
+              <option>Hetcbek, 4qapi</option>
+            </select>
+          </div>
+          <div class="year__min__max">
+            <select
+              class="year__minimum"
+              id="year__min"
+            >
+              <option>Il,min.</option>
+              <option>Sifirla</option>
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+            </select>
+
+            <select
+              class="year__maximum"
+              id="year__max"
+            >
+              <option>maks.</option>
+              <option>Sifirla</option>
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+            </select>
+          </div>
+        </div>
+        <div class="down">
+          <div class="down__left">
+            <p>Bu gun:</p>
+          </div>
+          <div class="down__middle">
+            <button
+              type="button"
+              class="btn__down__all"
+              id="btn__down__all"
+            >
+              Hamisi
+            </button>
+            <button
+              type="button"
+              class="btn__down__sales"
+            >
+              Satiwdadir
+            </button>
+            <button
+              type="button"
+              class="btn__down__ordering"
+              id="btn__down__order"
+            >
+              Sifariwle
+            </button>
+          </div>
+          <span
+            class="reseting"
+            id="reset"
+            >Sifirla</span
+          >
+          <select
+            class="moreFilters"
+            id="moreFilter"
+          >
+            <option selected>Daha cox filter</option>
+          </select>
+          <button
+            type="button"
+            class="show__adding"
+            id="show__add"
+          >
+            Elanlari goster
+          </button>
+        </div>
+
+        <div
+          class="cars"
+          id="cars_inEkran"
+        ></div>
+      </aside>
+    </main>
+    <footer class="footer-container">
+      <div class="everything__in__app">
+        <h3>Hər şey tətbiqdə!</h3>
+      </div>
+      <div class="app">
+        <div class="app-left">
+          <img src="./img/app-store-awards-2023.jpg" />
+          <img src="./img/googlePay.png" />
+          <img src="./img/AppGallery.webp" />
+        </div>
+        <div class="app-right">
+          <img src="./img/foto-tela-turbo.az.jpg" />
+          <img src="./img/qr-turbo.jpg" />
+        </div>
+      </div>
+      <div class="contact">
+        <div class="contact-left">
+          <p>Reklam yerlewdrin</p>
+        </div>
+
+        <div class="contact-right">
+          <img src="./icons/facebook-f-brands-solid-full.svg" />
+          <img src="./icons/instagram-brands-solid-full.svg" />
+          <p><img src="./icons/message-to-send.svg" />turbo@turbo.az</p>
+          <p><img src="./icons/phone-solid-full.svg" /> (012) 526-47-47</p>
+        </div>
+      </div>
+      <div
+        class="car-list"
+        id="car-listening"
+      ></div>
+      <div class="rules">
+        <p>Qaydalar</p>
+        <p>Qanun</p>
+        <p>Istifadeci razilawmasi</p>
+        <p>Mexfilik siyaseti</p>
+        <p>Sifariwli avtomobil alan alici ucun</p>
+        <p>Reklam yerlewdirin</p>
+      </div>
+      <div class="voen">
+        <p>
+          Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş
+          elanların məzmununa görə məsuliyyət daşımır.
+        </p>
+        <p>2006-2026 Digital Classifieds MMC. VÖEN: 1405631661</p>
+        <a href="https://turbo.az/">Mobil versiya</a>
+      </div>
+    </footer>
+
+    <div id="modal">
+      Yeni masin elave et!
+      <hr />
+      <form id="carForm">
+        <label for="marka__input">Marka: </label>
+        <input
+          id="marka__input"
+          type="text"
+          placeholder="Markani elave edin!!"
+        />
+
+        <label for="model__input">Model: </label>
+        <input
+          id="model__input"
+          type="text"
+          placeholder="Modeli elave edin!!"
+        />
+
+        <label for="year__input">Il: </label>
+        <input
+          id="year__input"
+          type="text"
+          placeholder="Masinin ilini qeyd edin!"
+        />
+
+        <label for="price__input">Qiymet: </label>
+        <input
+          id="price__input"
+          type="text"
+          placeholder="Mawinin qiymetini qeyd edin!"
+        />
+        <hr />
+        <div class="buttons__newCarAdd">
+          <button
+            type="button"
+            id="close__btn"
+          >
+            Close
+          </button>
+          <button
+            type="submit"
+            id="submit__btn"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+      <button
+        type="button"
+        id="modal__close"
+      >
+        X
+      </button>
+    </div>
+
+    <script
+      src="./cars.js"
+      type="module"
+    ></script>
+    <script
+      src="./main.js"
+      type="module"
+    ></script>
+  </body>
+</html>
